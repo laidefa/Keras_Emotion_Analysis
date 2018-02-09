@@ -3,7 +3,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-
+#卷积神经网络训练情感分析
 from keras.models import Sequential 
 from keras.layers.embeddings import Embedding 
 from keras.preprocessing import sequence 
@@ -38,79 +38,10 @@ model.compile(loss = 'binary_crossentropy', optimizer = 'rmsprop', metrics = ['a
 print(model.summary())
 
 
-
+#下面对模型进行拟合
 model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs = 20, batch_size = 100)
 scores = model.evaluate(X_test, y_test, verbose = 1)
 print(scores)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
